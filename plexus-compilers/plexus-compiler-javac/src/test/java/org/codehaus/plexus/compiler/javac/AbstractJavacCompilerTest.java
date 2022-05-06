@@ -24,13 +24,6 @@ package org.codehaus.plexus.compiler.javac;
  * SOFTWARE.
  */
 
-import org.codehaus.plexus.compiler.AbstractCompilerTest;
-import org.codehaus.plexus.compiler.CompilerConfiguration;
-import org.codehaus.plexus.util.StringUtils;
-import org.hamcrest.Matchers;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,6 +31,13 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.codehaus.plexus.compiler.AbstractCompilerTest;
+import org.codehaus.plexus.compiler.CompilerConfiguration;
+import org.codehaus.plexus.util.StringUtils;
+import org.hamcrest.Matchers;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -110,22 +110,12 @@ public abstract class AbstractJavacCompilerTest
     public String getTargetVersion()
     {
         String javaVersion = getJavaVersion();
-        if (javaVersion.contains("9.0")){
-            return "1.7";
-        }
-        if (javaVersion.contains("11")){
+        if ( javaVersion.contains( "11" ) )
+        {
             return "11";
         }
-        if (javaVersion.contains("14")){
-            return "14";
-        }
-        if (javaVersion.contains("15")){
-            return "15";
-        }
-        if (javaVersion.contains("16")){
-            return "16";
-        }
-        if (javaVersion.contains("17")){
+        if ( javaVersion.contains( "17" ) )
+        {
             return "17";
         }
         if (javaVersion.contains("18")){
@@ -144,26 +134,12 @@ public abstract class AbstractJavacCompilerTest
     public String getSourceVersion()
     {
         String javaVersion = getJavaVersion();
-        if (javaVersion.contains("9.0"))
-        {
-            return "1.7";
-        }
-        if (javaVersion.contains("11"))
+        if ( javaVersion.contains( "11" ) )
         {
             return "11";
         }
-        if (javaVersion.contains("14"))
+        if ( javaVersion.contains( "17" ) )
         {
-            return "14";
-        }
-        if (javaVersion.contains("15"))
-        {
-            return "15";
-        }
-        if (javaVersion.contains("16")){
-            return "16";
-        }
-        if (javaVersion.contains("17")){
             return "17";
         }
         if (javaVersion.contains("18")){
